@@ -9,13 +9,13 @@ function SodaDetail(props) {
       <h3>{soda.flavor} - {soda.name} - {soda.price}</h3>
       <p><em>{soda.cans}</em></p>
       <button onClick={ props.onClickingEdit}>Update Soda</button>
-      <button onClick={ () => onClickingDelete(ticket.id)}>Retire Soda</button>
+      <button onClick={ () => onClickingDelete(soda.id)}>Retire Soda</button>
       <hr />
     </React.Fragment>
   );
 }
 
-TicketDetail.propTypes = {
+SodaDetail.propTypes = {
   soda: PropTypes.object,
   onClickingDelete: PropTypes.func,
   onClickingEdit: PropTypes.func
