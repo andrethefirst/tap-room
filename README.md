@@ -22,10 +22,11 @@ It should have Create and Read Functionality.
 
 ## Plan/Component Diagram
 Initial MVP that has CREATE and READ functionality
-<img src="mvp.PNG">
+
+![component diagram](./src/img/Mvp.PNG)
 
 Final product with CRUD
-<img src="SodaCrud.PNG">
+![soda crud](./src/img/SodaCrud.PNG)
 
 ## Setup/Installation Requirements
 * Clone the Project

@@ -22,7 +22,7 @@ function SodaList(props){
 
 SodaList.propTypes ={
   sodaList: PropTypes.array,
-  onTicketSelection: PropTypes.func
+  onSodaSelection: PropTypes.func
 }
 
 export default SodaList;
