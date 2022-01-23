@@ -79,7 +79,7 @@ class SodaControl extends React.Component {
       const selectedSoda = this.state.mainSodaList.filter(soda => soda.id === id)[0]
       selectedSoda.cans ++;
       const newSodaListArray = []
-      const changedSodaArray = new newSodaListArray.concat(selectedSoda);
+      const changedSodaArray = newSodaListArray.concat(selectedSoda);
       this.setState({
         mainSodaList: changedSodaArray
       });
@@ -87,20 +87,12 @@ class SodaControl extends React.Component {
   }
 
   handleDecreasingSoda = (id) => {
-    console.log(this.state.mainSodaList)
-    if(this.state.mainSodaList.length > 1 ){
-      const selectedSoda = this.state.mainSodaList.filter(soda => soda.id === id)[0]
+    const selectedSoda = this.state.mainSodaList.filter(soda => soda.id === id)[0]
+    if(this.state.selectedSoda.cans>0){
       selectedSoda.cans --;
       const newMainSodaList = this.state.mainSodaList.filter(soda => soda.id !== id).concat(selectedSoda);
       this.setState({
-        mainSodaList: newMainSodaList});
-    } else {
-      const selectedSoda = this.state.mainSodaList.filter(soda => soda.id === id)[0]
-      selectedSoda.cans --;
-      const newSodaListArray = []
-      const changedSodaArray = new newSodaListArray.concat(selectedSoda);
-      this.setState({
-        mainSodaList: changedSodaArray
+        mainSodaList: newMainSodaList
       });
     }
   }
@@ -113,7 +105,7 @@ class SodaControl extends React.Component {
       currentlyVisibleState = <EditSodaForm soda = {this.state.selectedSoda} onEditSoda = {this.handleEditingSodaInList} />
       buttonText = "Return to Soda List";
     } else if(this.state.selectedSoda !=null){
-      currentlyVisibleState = <SodaDetail soda = {this.state.selectedSoda} onClickingDelete = {this.handleDeletingSoda} onClickingEdit = {this.handleEditClick} onClickingDecrease={this.state.handleDecreasingSoda} onClickingIncrease={this.state.handleIncreasingSoda}/>
+      currentlyVisibleState = <SodaDetail soda = {this.state.selectedSoda} onClickingDelete = {this.handleDeletingSoda} onClickingEdit = {this.handleEditClick} onClickingDecrease={this.handleDecreasingSoda} onClickingIncrease={this.handleIncreasingSoda}/>
       buttonText = "Return to Soda List";
     } else if(this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewSodaForm onNewSodaCreation = {this.handleAddingNewSodaToList} />
